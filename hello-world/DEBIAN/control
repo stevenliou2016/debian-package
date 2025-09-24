@@ -1,0 +1,8 @@
+Package: hello-world
+Version: 1.0.0
+Architecture: amd64
+Maintainer: Your Name <your.email@example.com>
+Installed-Size: 68
+Section: Utility
+Priority: optional
+Description: This is a hello world example.

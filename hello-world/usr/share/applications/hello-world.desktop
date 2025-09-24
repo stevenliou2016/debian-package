@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=hello-world
+Comment=hello-world.
+Exec='/usr/bin/hello-world'
+Icon=hello-world.png
+Terminal=true
+Type=Application
+Categories=Utility;Development;
