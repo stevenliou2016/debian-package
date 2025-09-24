@@ -1,8 +1,7 @@
 # Make your own Debian package(.deb)
 
-:::info
-:bulb: Environment: Ubuntu 20.04.6 LTS, dpkg 1.19.7
-:::
+> [!NOTE]   
+> Environment: Ubuntu 20.04.6 LTS, dpkg 1.19.7
 
 ## What is Debian package?
 
@@ -33,9 +32,8 @@ hello-world
         └── icons
             └── hello-world.png
 ```
-:::danger
-Note: The DEBIAN/control file is mandatory; otherwise, dpkg-deb will report an error.
-:::
+> [!IMPORTANT] 
+> The DEBIAN/control file is mandatory; otherwise, dpkg-deb will report an error.
 
 ### :small_blue_diamond: hello-world source code
 ```
@@ -47,10 +45,10 @@ int main(){
     return 0;
 }
 ```
-:::info
-Compilation command: g++ hello-world.cpp -o hello-world  
-Place the executable hello-world in hello-world/usr/bin.
-:::
+> [!NOTE] 
+> Compilation command: g++ hello-world.cpp -o hello-world  
+> Place the executable hello-world in hello-world/usr/bin.
+
 ### :small_blue_diamond: control file
 ```
 Package: hello-world
@@ -63,26 +61,29 @@ Priority: optional
 Description: This is a hello world example.
 ```
 Package: Package name  
+
 Version: Debian Package version  
-:::info
-Debian version numbers typically follow the format major.minor.patch
-:::
+> [!NOTE] 
+> Debian version numbers typically follow the format major.minor.patch
+
 Architecture: Specifies applicable architectures  
-:::info
-all: Suitable for all architectures, no rebuild required  
-any: Can be built successfully on any architecture  
-amd64: Suitable for 64-bit architectures (**x86_64**)  
-:::
+> [!NOTE] 
+>all: Suitable for all architectures, no rebuild required  
+>any: Can be built successfully on any architecture  
+>amd64: Suitable for 64-bit architectures (**x86_64**)
+
 Maintainer: Maintainer information  
+
 Installed-Size: Informs the user of the installed file size to estimate space, in **KB**  
+
 Section: Package category  
-:::info
-**Utility** indicates a tool category  
-:::
+> [!NOTE] 
+> **Utility** indicates a tool category  
+
 Priority: Package priority  
-:::info
-**optional** is the standard setting for most non-essential packages  
-:::
+> [!NOTE] 
+> **optional** is the standard setting for most non-essential packages  
+
 Description: Package description  
 ```
 The above information can be viewed with the command:
@@ -100,9 +101,9 @@ APT-Manual-Installed: yes
 APT-Sources: /var/lib/dpkg/status
 Description: This is a hello world example.
 ```
-:::info
-Place the control file in hello-world/DEBIAN
-:::
+> [!NOTE] 
+> Place the control file in hello-world/DEBIAN
+
 
 ### :small_blue_diamond: hello-world.desktop (optional)
 ```
@@ -121,16 +122,16 @@ Name= : Display name of the application
 Comment= : Description of the application  
 Exec= : Command to launch the application  
 Icon= : Application icon  
-:::info
-dpkg automatically searches for the icon in hello-world/usr/share/icons. If the icon is not in the standard path, specify the full path.  
-:::
+> [!NOTE] 
+> dpkg automatically searches for the icon in hello-world/usr/share/icons. If the icon is not in the standard path, specify the full path.  
+
 Terminal= : Whether to run in a terminal  
 Type= : Specifies the type  
-:::info
-Options include Application, Link, or Directory.
-:::
+> [!NOTE] 
+> Options include Application, Link, or Directory.
+
 Categories= : Specifies the category
-:::info
-Place hello-world.desktop in hello-world/usr/share/applications/.
-:::
+> [!NOTE] 
+> Place hello-world.desktop in hello-world/usr/share/applications/.
+
           
